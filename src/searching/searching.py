@@ -17,28 +17,26 @@ def linear_search(arr, target):
 def binary_search(arr, target):
 
     # Your code here
-    
-    center = int(len(arr)/2)
-    # print(center)
-    # check center if matches return number
+    low = 0
+    high = len(arr) - 1
 
-    if target == arr[center]:
-        return 
+    # check while low is less than or equal to high or not found
+    while (low <= high):
+        mid = (low + high)//2
 
-        # if target > center cut right and repeat
-    elif target > arr[center]:
-        
-        binary_search(arr[center:],target)
+        if target == arr[mid]:
+            return mid
 
-        # if target < center cut left and repeat
-    else:
-        binary_search(arr[:center],target)
-
-
-
-
+        # less than mid
+        elif target < arr[mid]:
+            high = mid - 1
+            continue
+        # greater than mid
+        elif target > arr[mid]:
+            low = mid + 1
+            continue
 
     return -1  # not found
 
 
-print(binary_search([-9, -8, -6, -4, -3, -2, 0, 1, 2, 3, 5, 7, 8, 9],1))
+print(binary_search([-9, -8, -6, -4, -3, -2, 0, 1, 2, 3, 5, 7, 8, 9],12))
