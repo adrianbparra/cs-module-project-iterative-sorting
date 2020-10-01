@@ -8,19 +8,45 @@ def selection_sort(arr):
         # (hint, can do in 3 loc)
         # Your code here
 
-
+        
+        # loop on values after the smallest_index of array
+        for j in range(cur_index, len(arr)):
+            # check if a value is samaller
+            if arr[j] < arr[cur_index]:
+                print(arr[j])
+                
         # TO-DO: swap
         # Your code here
+                arr[cur_index],arr[j] = arr[j],arr[cur_index]
 
     return arr
+
+# print(selection_sort([1, 5, 8, 4, 2, 9, 6, 0, 3, 7]))
 
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
     # Your code here
 
+    sorts = 1
+
+    while sorts is not 0:
+    # if no swaps exix else go again starting from 0
+        
+        sorts = 0
+    # loop through array
+        for i in range(0, len(arr)-1):
+            
+        # compare to right side
+            if arr[i] > arr[i+1]:
+            # print(i)
+        # if right is smaller swap them
+                arr[i],arr[i+1] = arr[i+1],arr[i]
+                sorts += 1
 
     return arr
+
+# print(bubble_sort([1, 5, 8, 4, 2, 9, 6, 0, 3, 7]))
 
 '''
 STRETCH: implement the Counting Sort function below
@@ -41,6 +67,7 @@ What is the time and space complexity of the counting sort algorithm?
 '''
 def counting_sort(arr, maximum=None):
     # Your code here
+    
 
 
     return arr
